@@ -9,9 +9,9 @@
 
     <form method="POST" action="{% url 'new' %}">
         {% csrf_token %}
-        <h2>Title of the text:</h2>
+        Title of the text:
         <input type="text" name="title" placeholder="Type in a title for the page">
-        <h2>Contents:</h2>
+        Contents:
         <textarea name="content" rows="6" cols="15" placeholder="Type in the Markdown content for the page"></textarea>
         <input type="submit" value="Save">
     </form>
