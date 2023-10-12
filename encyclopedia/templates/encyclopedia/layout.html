@@ -45,7 +45,6 @@
             .sidebar {
                 background-color: hsla(0, 100%, 30%, 0.3);
                 height: 100vh;
-                padding: 20px;
                 width: 280px
             }
 
@@ -78,7 +77,7 @@
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main col-lg-10 col-md-9">
+            <div class="main d-flex flex-column flex-shrink-0 p-3">
                 {% block body %}
                 {% endblock %}
             </div>
