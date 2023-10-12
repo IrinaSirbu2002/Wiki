@@ -94,32 +94,30 @@
         </style>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row d-flex flex-nowrap">
-                <div class="sidebar d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2">
-                    <h2>Wiki</h2>
-                    <form method="POST" action="{% url 'index' %}">
-                        {% csrf_token %}
-                        <input class="search p-2 rounded-3" type="text" name="q" placeholder="Search Encyclopedia">
-                    </form>
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="{% url 'index' %}" class="nav-link">Home</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'new' %}" class="nav-link">Create New Page</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'random' %}" class="nav-link">Random Page</a>
-                        </li>
-                    </ul>
-                    {% block nav %}
-                    {% endblock %}
-                </div>
-                <div class="main col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    {% block body %}
-                    {% endblock %}
-                </div>
+        <div class="row d-flex flex-nowrap">
+            <div class="sidebar d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2">
+                <h2>Wiki</h2>
+                <form method="POST" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input class="search p-2 rounded-3" type="text" name="q" placeholder="Search Encyclopedia">
+                </form>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'new' %}" class="nav-link">Create New Page</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'random' %}" class="nav-link">Random Page</a>
+                    </li>
+                </ul>
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {% block body %}
+                {% endblock %}
             </div>
         </div>
 
