@@ -7,10 +7,11 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+        <link href="sidebars.css" rel="stylesheet">
         <style>
             body {
                 margin: 0;
-                background-color: white;
+                background-color: var(--bs-info-bg-subtle);
             }
 
             code {
@@ -27,6 +28,10 @@
                 width: 80%;
             }
 
+            a {
+                color: black;
+            }
+
             .main {
                 padding: 10px;
             }
@@ -41,6 +46,7 @@
                 background-color: hsla(0, 100%, 30%, 0.3);
                 height: 100vh;
                 padding: 20px;
+                width: 280px
             }
 
             .sidebar h2 {
@@ -54,7 +60,7 @@
     </head>
     <body>
         <div class="row">
-            <div class="sidebar col-lg-2 col-md-3">
+            <div class="sidebar d-flex flex-column flex-shrink-0 p-3 --bg-info">
                 <h2>Wiki</h2>
                 <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}
