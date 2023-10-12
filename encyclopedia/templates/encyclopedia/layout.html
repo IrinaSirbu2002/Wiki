@@ -78,11 +78,12 @@
             .box {
                 width: 100%;
                 border: 3px #696969 solid;
+                margin: 10px;
             }
 
             input[type=submit] {
                 background-color: #A9A9A9;
-                padding: 8px 12px;
+                padding: 8px 16px;
                 text-align: center;
                 display: inline-block;
                 margin: 4px 10px;
@@ -98,7 +99,7 @@
     </head>
     <body>
         <div class="row">
-            <div class="sidebar p-3 col-md-3 col-lg-2">
+            <div class="sidebar p-3 col-md-2 col-sm-4">
                 <h2>Wiki</h2>
                 <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}
@@ -118,7 +119,7 @@
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="main col-md-9 ms-sm-auto px-md-4 col-sm-7">
                 {% block body %}
                 {% endblock %}
             </div>
