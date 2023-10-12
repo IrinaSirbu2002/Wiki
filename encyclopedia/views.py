@@ -54,10 +54,12 @@ def new(request):
             util.save_entry(title, content)
             markdown_content = util.get_entry(title)
             html_content = markdown.markdown(markdown_content)
-            return render(request, "encyclopedia/entries.html", {
-                "entry": entry,
-                "content": html_content
-            })
+            form_action = f"/wiki/{title}"
+            # return render(request, "encyclopedia/entries.html", {
+            #     "entry": ,
+            #     "content": html_content
+            # })
+            return redirect(form_action)
     else:
         return render(request, "encyclopedia/new.html")
     

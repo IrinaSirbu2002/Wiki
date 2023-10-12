@@ -1,1 +1,1 @@
-markdown_content and mark and and
+markdown_content and mark
