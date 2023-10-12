@@ -51,7 +51,7 @@
 
             .sidebar {
                 background-color: #A9A9A9;
-                width: 280px;
+                /* width: 280px; */
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
@@ -101,7 +101,7 @@
                     {% csrf_token %}
                     <input class="search p-2 rounded-3" type="text" name="q" placeholder="Search Encyclopedia">
                 </form>
-                <ul class="nav nav-pills mb-auto">
+                <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
                         <a href="{% url 'index' %}" class="nav-link">Home</a>
                     </li>
