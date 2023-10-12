@@ -75,14 +75,29 @@
                 margin: 10px;
             }
 
-            .title {
+            .box {
                 width: 100%;
+                border: 3px #696969 solid;
+            }
+
+            input[type=submit] {
+                background-color: #A9A9A9;
+                padding: 8px 12px;
+                text-align: center;
+                display: inline-block;
+                margin: 4px 10px;
+            }
+
+            input[type=submit]:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #696969;
+                color: white;
             }
 
         </style>
     </head>
     <body>
-        <div class="row">
+        <div class="container">
             <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
                 <h2>Wiki</h2>
                 <form method="POST" action="{% url 'index' %}">
@@ -103,7 +118,7 @@
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main d-flex flex-column flex-shrink-0 ">
+            <div class="main d-flex flex-column ">
                 {% block body %}
                 {% endblock %}
             </div>
