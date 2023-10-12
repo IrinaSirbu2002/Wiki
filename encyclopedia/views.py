@@ -26,7 +26,7 @@ def index(request):
                 return render(request, "encyclopedia/entry_not_found.html")
     
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": sorted(util.list_entries())
     })
 
 def entry(request, entry):
