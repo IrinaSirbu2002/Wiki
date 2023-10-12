@@ -51,7 +51,7 @@
 
             .sidebar {
                 background-color: #A9A9A9;
-                /* width: 280px; */
+                width: 280px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
@@ -96,7 +96,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2">
+                <div class="sidebar d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2">
                     <h2>Wiki</h2>
                     <form method="POST" action="{% url 'index' %}">
                         {% csrf_token %}
