@@ -8,10 +8,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
         <style>
-            body {
-                margin: 0;
-                background-color: var(--bs-info-bg-subtle);
-            }
 
             code {
                 white-space: pre;
@@ -31,6 +27,11 @@
                 color: black;
             }
 
+            a:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #696969;
+            }
+
             .main {
                 padding: 10px;
             }
@@ -39,11 +40,11 @@
                 width: 100%;
                 font-size: 15px;
                 line-height: 15px;
-                border: 2px #9999FF solid;
+                border: 2px #696969 solid;
             }
 
             .sidebar {
-                background-color: #99CCFF;
+                background-color: #A9A9A9;
                 height: 100vh;
                 width: 280px;
                 padding: 30 px;
@@ -57,6 +58,13 @@
                 padding: 30 px;
                 background-color: white;
             }
+
+            input[type=text]:hover{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+
+
         </style>
     </head>
     <body>
@@ -67,15 +75,16 @@
                     {% csrf_token %}
                     <input class="search p-2 rounded-3" type="text" name="q" placeholder="Search Encyclopedia">
                 </form>
+                <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="{% url 'new' %}" class="nav-link">Create New Page</a>
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
                     </li>
                     <li>
                         <a href="{% url 'new' %}" class="nav-link">Create New Page</a>
                     </li>
                     <li>
-                        <a href="{% url 'random' %}" class="nav-link">Random Page</a>
+                        <a href="{% url 'random' %}">Random Page</a>
                     </li>
                 </ul>
                 {% block nav %}
