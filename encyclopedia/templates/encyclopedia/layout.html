@@ -40,12 +40,14 @@
                 width: 100%;
                 font-size: 15px;
                 line-height: 15px;
+                border: 2px var(--bs-info-bg-subtle) solid;
             }
 
             .sidebar {
-                background-color: hsla(0, 100%, 30%, 0.3);
+                background-color: var(--bs-info);
                 height: 100vh;
-                width: 280px
+                width: 280px;
+                padding: 30 px;
             }
 
             .sidebar h2 {
@@ -54,16 +56,17 @@
 
             body {
                 padding: 30 px;
+                background-color: var(--bs-info-bg-subtle);
             }
         </style>
     </head>
     <body>
         <div class="row">
-            <div class="sidebar d-flex flex-column flex-shrink-0 p-3 --bg-info">
+            <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
                 <h2>Wiki</h2>
                 <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                    <input class="search p-3 rounded-5" type="text" name="q" placeholder="Search Encyclopedia">
                 </form>
                 <div>
                     <a href="{% url 'index' %}">Home</a>
