@@ -46,6 +46,10 @@
                 color: black;
             }
 
+            a[class="nav-link"] {
+                color: black;
+            }
+
             a[class="nav-link"]:hover {
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 background-color: #696969;
@@ -121,7 +125,7 @@
                 </form>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="{% url 'index' %}" class="nav-link text-dark">Home</a>
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
                     </li>
                     <li>
                         <a href="{% url 'new' %}" class="nav-link">Create New Page</a>
