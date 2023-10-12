@@ -49,13 +49,13 @@
                 border: 2px #696969 solid;
             }
 
-            .sidebar1 {
+            .sidebar {
                 background-color: #A9A9A9;
                 /* width: 280px; */
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
-            .sidebar1 h2 {
+            .sidebar h2 {
                 margin-top: 5px;
                 margin-left: 10px;
             }
@@ -94,9 +94,9 @@
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="sidebar1 p-3 col-md-3 col-lg-2 p-0">
+                <div class="d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2">
                     <h2>Wiki</h2>
                     <form method="POST" action="{% url 'index' %}">
                         {% csrf_token %}
