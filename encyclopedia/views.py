@@ -26,7 +26,16 @@ def index(request):
                 return render(request, "encyclopedia/entry_not_found.html")
     
     return render(request, "encyclopedia/index.html", {
-        "entries": sorted(util.list_entries())
+        # "entries": sorted(util.list_entries())
+        "entries": ['Books', 'Movies', 'TV Series']
+    })
+
+def type(request, type):
+    
+    entries = list_entries_by_type(type)
+    return render(request, "encyclopedia/type.html", {
+        # "entries": sorted(util.list_entries())
+        "entries": entries
     })
 
 def entry(request, entry):
