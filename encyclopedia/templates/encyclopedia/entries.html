@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<div>
+<div class="entry">
     {{ content|safe }}
 </div>
-<div>
+<div class="entry">
     <a href="{% url 'edit' %}?title={{ entry }}">Edit page</a>
 </div>
 

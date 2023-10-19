@@ -1,22 +1,23 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Edit Page
+    New Page
 {% endblock %}
 
 {% block body %}
-    <h1>Edit the page</h1>
+    <h1>Add page</h1>
 
-    <div class="entry">Title of the page: {{ title }}</div>
-    <form method="POST" >
+    <form method="POST">
         {% csrf_token %}
-        <input type="hidden" name="title" value="{{ title }}">
-        <input type="hidden" name="type" value="{{ type }}">
-        <textarea class="box" name="content" rows="6" cols="15">{{ content }}</textarea>
+        <div class="entry">Title of the page:</div>
+        <input class="box" type="text" name="title" placeholder="Type in a title for the page">
+        <div class="entry">Contents:</div>
+        <textarea class="box" name="content" rows="6" cols="15" placeholder="Type in the Markdown content for the page"></textarea>
         <div>
-            <input action="{% url 'entry' title %}" type="submit" value="Save">
+            <input action="{% url 'entry' '__title__' %}" type="submit" value="Save">
         </div>
     </form>
+
     <div class="md">
         <div>Markdown Synthax for beginners!</div>
         <div>Markdown is a lightweight markup language that's easy to learn and widely used for creating formatted text documents.
@@ -79,5 +80,6 @@
                 That's it! You can now write your own Markdown text inluding your favorite book, movie or TV series.
             </div>
         </div>
+    </div>
 
 {% endblock %}

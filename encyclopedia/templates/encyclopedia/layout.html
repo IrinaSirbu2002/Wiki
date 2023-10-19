@@ -22,40 +22,42 @@
                 .bd-placeholder-img-lg {
                 font-size: 3.5rem;
                 }
+                .list {
+                    font-size: 20px;
+                }
+                .sidebar {
+                    position: fixed;
+                }
+                .main {
+                    margin-left: 280px;
+                }
             }
 
             @media (max-width: 767px) {
                 .sidebar {
-                    width: 30%;
-                    padding: 0px;
-                    font-size: 15px;
-                }
-                .main {
-                    width: 70%;
-                    padding: 10px;
-                }
+                    height: auto;
+                    
+                }              
                 .search {
                     font-size: 13px;
                     line-height: 10px;
                 }
+                .list {
+                    font-size: 15px;
+                }
+                .main {
+                    margin-left: 10px;
+                }
             }
 
-            /* code {
-                white-space: pre;
-            } */
-
             h1 {
+                margin : 20px;
                 margin-top: 0px;
-                padding-top: 20px;
+                margin-left: 10px;
             }
 
             textarea {
                 height: auto;
-                width: 100%; 
-            }
-
-            textarea:hover {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
             a {
@@ -72,8 +74,9 @@
                 color: white;
             }
 
-            .main {
-                padding: 10px;
+            .list {
+                margin: 10px;
+                margin-left: 0px;
             }
 
             .search {
@@ -85,10 +88,6 @@
 
             .sidebar {
                 background-color: #A9A9A9;
-                /* width: 280px; */
-                height: 100vh;
-                padding: 20px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
             .sidebar h2 {
@@ -101,18 +100,22 @@
                 margin: 0;
             }
 
-            input[type=text]:hover{
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
             form h2 {
                 margin: 10px;
             }
 
             .box {
-                width: 100%;
                 border: 3px #696969 solid;
                 margin: 10px;
+                width: 80%;
+            }
+
+            .box[name="type"] {
+                width: auto;
+            }
+
+            .box:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
 
             input[type=submit] {
@@ -129,11 +132,23 @@
                 color: white;
             }
 
+            .entry {
+                margin: 10px;
+            }
+
+            .md {
+                background-color: LightGrey;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin: 15px;
+                padding: 5px;
+                width: 80%;
+            }
+
         </style>
     </head>
     <body>
         <div class="row">
-            <div class="sidebar p-3 col-md-3 col-lg-2 col-xs-3 ">
+            <div class="sidebar p-3 col-md-3 col-lg-2 ">
                 <h2>Wiki</h2>
                 <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}
@@ -153,7 +168,7 @@
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main col-md-9 col-lg-10 col-xs-9">
+            <div class="main col-md-9 col-lg-10">
                 {% block body %}
                 {% endblock %}
             </div>

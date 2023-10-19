@@ -5,12 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ type }}:</h1>
+    <h1>{{ type }}</h1>
 
     <ul>
         {% for entry in entries %}
-            <li><a href="{% url 'entry' entry %}">{{ entry }}</a></li>
+            <li class="list"><a href="{% url 'entry' entry %}">{{ entry }}</a></li>
         {% endfor %}
     </ul>
+
+    <div class="entry">
+        <a href="{% url 'new_type' %}?type={{ type }}">Add {{ type }}</a>
+    </div>
 
 {% endblock %}

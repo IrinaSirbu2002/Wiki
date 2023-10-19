@@ -9,11 +9,82 @@
 
     <form method="POST">
         {% csrf_token %}
-        <div>Title of the text:</div>
+        <div class="entry">Title of the text:</div>
         <input class="box" type="text" name="title" placeholder="Type in a title for the page">
-        <div>Contents:</div>
-        <textarea class="box" name="content" placeholder="Type in the Markdown content for the page"></textarea>
-        <input action="{% url 'entry' '__title__' %}" type="submit" value="Save">
+        <div class="entry">Choose type:</div>
+        <select class="box" name="type">
+            <option disabled selected >Select Option</option>
+            <option>Books</option>
+            <option>Movies</option>
+            <option>TV Series</option>
+        </select>
+        <div class="entry">Contents:</div>
+        <textarea class="box" name="content" rows="6" cols="15" placeholder="Type in the Markdown content for the page"></textarea>
+        <div>
+            <input action="{% url 'entry' '__title__' %}" type="submit" value="Save">
+        </div>
     </form>
+    <div class="md">
+        <div>Markdown Synthax for beginners!</div>
+        <div>Markdown is a lightweight markup language that's easy to learn and widely used for creating formatted text documents.
+            Here are some common formatting features:
+            <ul>
+                <li>
+                    Titles and Headings
+                </li>
+                <div>
+                    To create headings in Markdown, use hash (#) symbols. The number of hash symbols determines the heading level.
+                    <div># Heading 1</div>
+                    <div>## Heading 2</div>
+                    <div>### Heading 3</div>
+                </div>
+                <li>
+                    Text Styling
+                </li>
+                <div>
+                    Bold Text: Surround the text with double asterisks or double underscores **Bold Text** or __Bold Text__. 
+                    Italic Text: Surround the text with single asterisks or single underscores *Italic Text* or _Italic Text_.
+                </div>
+                <li>
+                    Unordered Lists:
+                </li>
+                <div>
+                    * Item 1 
+                </div>
+                <div>
+                    * Item 2 
+                </div>
+                <div>
+                    * Item 3 
+                </div>
+                <li>
+                    Ordered Lists:
+                </li>
+                <div>
+                    1. First Item
+                </div>
+                <div>
+                    2. Second Item
+                </div>
+                <div>
+                    3. Third Item 
+                </div>
+                <li>
+                    Links
+                </li>
+                <div>
+                    Create links with square brackets for the link text and parentheses for the URL: [OpenAI's Website](https://www.openai.com/)
+                </div>
+                <li>
+                    Images
+                </li>
+                <div>
+                    Insert images in a similar way to links, but use an exclamation mark ! in front of the square brackets: ![Alt Text](https://www.example.com/image.jpg)
+                </div>
+            </ul>
+            <div>
+                That's it! You can now write your own Markdown text inluding your favorite book, movie or TV series.
+            </div>
+        </div>
 
 {% endblock %}
