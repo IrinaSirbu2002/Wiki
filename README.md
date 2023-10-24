@@ -1,7 +1,7 @@
 # Wiki - A Wikipedia-like Encyclopedia
 
 ## Description
-"Wiki" is a web application that emulates the format and functionality of Wikipedia, allowing users to create and edit articles in a user-friendly and Markdown-based interface. It was developed as part of the CS50's Web Programming with Python and JavaScript course offered by Harvard University with this [task](https://cs50.harvard.edu/web/2020/projects/1/wiki/).
+"Wiki" is a web application that emulates the format and functionality of Wikipedia, allowing users to create and edit articles in a user-friendly and Markdown-based interface. It was developed as part of the CS50's Web Programming with Python and JavaScript course offered by Harvard University with this [task](https://cs50.harvard.edu/web/2020/projects/1/wiki/). For more user-friendly and interactive reasons, the artcles are information about movies, TV Series and books, creating a source of inspiration for free time activities. Users can post their favourite (along with their thoughts on it) or be inspired by others'.
 
 ## Features
 <ul>
@@ -59,10 +59,10 @@ Files and Directories modified from the original Django packadge:
 encyclopedia (my web application)
 <ul>
     <li>
-    templates (including the CSS content) : I used the Bootstrap CSS and JavaScript for the layout of the web pages.
+    templates (including the CSS content) : I used the Bootstrap CSS and JavaScript for the layout of the web pages
     </li>
     <li>
-    urls.py : I included all the paths to specific templates, including the name of enties in some url format.
+    urls.py : I included all the paths to specific templates (in some urls, the name of the path coincides with the name of the current entry)
     </li>
     <li>
     util.py : includes functions that helped retrieving or getting data from md files, such as get_entry, save_entry, list_entries and list_entries_by_type
